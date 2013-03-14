@@ -12,9 +12,12 @@
 /*.tmproj
 /ivy*
 /eclipse
-
+/AddendaSantander.iml
+/AddendaSantander-grailsPlugins.iml
+.idea/
 # default HSQL database files for production mode
 /prodDb.*
+
 
 # general HSQL database files
 *Db.properties
@@ -41,4 +44,6 @@
 
 # other
 *.iws
+
+.DS_Store
 
