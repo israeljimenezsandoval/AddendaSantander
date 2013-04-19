@@ -1,9 +1,11 @@
 package com.dsindigo.addendasantander
 
-class Comprobante {
+class Basilea {
 	
     static constraints = {
     }
-
-    String name
+	
+	String numContrato
+	String origenGasto
+	String TipoGasto
 }

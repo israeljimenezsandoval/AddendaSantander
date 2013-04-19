@@ -1,9 +1,10 @@
 package com.dsindigo.addendasantander
 
-class Comprobante {
-	
+class Inmuebles {
+
     static constraints = {
     }
-
-    String name
+	
+	Date fechaVencimiento
+	String numContrato
 }
