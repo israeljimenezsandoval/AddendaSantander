@@ -12,6 +12,14 @@
 				else
 					$('#' + idForm).css('display', 'none');
 			}
+			function updateInAddeda(idElement, idElementHide){
+				debugger
+				if(idElement == 'pagoIn')
+					$('#generaAddenda').css('display', 'block');
+				$('#elemntsInAddena').css('display', 'block');
+				$('#' + idElement).css('display', 'block');
+				$('#' + idElementHide).css('display', 'none');
+			}
 		</g:javascript>
 	</head>
 	<body>
@@ -35,6 +43,25 @@
 						</li>
 					</ul>
 				</div>
+				<div class="well" id="elemntsInAddena" style="display:none">
+					<div class="alert alert-info" id="pagoIn" style="display:none">
+						<label>Informacion de pago</label>
+					</div>
+					<div class="alert alert-info" id="emisionIn" style="display:none">
+						<label>Informacion de emision</label>
+					</div>
+					<div class="alert alert-info" id="inmueblesIn" style="display:none">
+						<label>Inmuebles</label>
+					</div>
+					<div class="alert alert-info" id="basileaIn" style="display:none">
+						<label>Basilea</label>
+					</div>
+					<div id="generaAddenda" style="display:none">
+						<fieldset class="buttons">
+							<g:link action="addAddenda" class="btn btn-primary" id="1">Agregar Addenda</g:link>
+						</fieldset>
+					</div>
+				</div>
 			</div>
 			
 			<div class="span9">
@@ -56,69 +83,88 @@
 				</ul>
 				</bootstrap:alert>
 				</g:hasErrors>
-
 				<fieldset>
-					<g:form class="form-horizontal" action="create" >
-						<fieldset>
+					
+					<div id="agregarInfPago">
+									<div class="alert alert-info">
+										<label>Informacion de Pago</label>
+										<a class="btn btn-sucess" onclick="hideElement(true, 'formInfPago')"><i class="icon-plus"></i></a>
+										<a class="btn btn-sucess" onclick="hideElement(false, 'formInfPago')"><i class="icon-minus"></i></a>
+									</div>
+									<div class="form-actions" id="formInfPago" style="display:none">
+										<g:formRemote name="formEmisor" on404="alert('not found!')"
+											url="[controller: 'comprobante', action: 'validateInput']"
+											onComplete="updateInAddeda('pagoIn', 'agregarInfPago')"
+											>
+											<g:render template="/informacionPago/form"/>
+											<fieldset class="buttons">
+												<g:actionSubmit name="infPago" value="Agregar"/>
+											</fieldset>
+										</g:formRemote >
+									</div>
+								</div>
+							
+					<div id="agregarEmisor">
+									<div class="alert alert-info">
+										<label>Informacion de Emisor</label>
+										<a class="btn btn-sucess" onclick="hideElement(true, 'formInfEmision')"><i class="icon-plus"></i></a>
+										<a class="btn btn-sucess" onclick="hideElement(false, 'formInfEmision')"><i class="icon-minus"></i></a>
+									</div>
+									<div class="form-actions" id="formInfEmision" style="display:none">
+										<g:formRemote name="formEmisor" on404="alert('not found!')"
+											url="[controller: 'comprobante', action: 'validateInput']"
+											onComplete="updateInAddeda('emisionIn', 'agregarEmisor')"
+											>
+											<g:render template="/informacionEmision/form"/>
+											<fieldset class="buttons">
+												<g:actionSubmit name="emisor" value="Agregar"/>
+											</fieldset>
+										</g:formRemote >
+									</div>
+								</div>
+							
+					<div id="agregarInmuebles">
+									<div class="alert alert-info">
+										<label>Inmuebles</label>
+										<a class="btn btn-sucess" onclick="hideElement(true, 'formInmuebles')"><i class="icon-plus"></i></a>
+										<a class="btn btn-sucess" onclick="hideElement(false, 'formInmuebles')"><i class="icon-minus"></i></a>
+									</div>
+									<div class="form-actions" id="formInmuebles" style="display:none">
+										<g:formRemote name="formInmuebles" on404="alert('not found!')"
+											url="[controller: 'comprobante', action: 'validateInput']"
+											onComplete="updateInAddeda('inmueblesIn', 'agregarInmuebles')"
+											>
+											<g:render template="/inmuebles/form"/>
+											<fieldset class="buttons">
+												<g:actionSubmit name="inmuebles" value="Agregar"/>
+											</fieldset>
+										</g:formRemote >
+									</div>
+								</div>
+							
+					<div id="agregarBasilea">
+									<div class="alert alert-info">
+										<label>Basilea</label>
+										<a class="btn btn-sucess" onclick="hideElement(true, 'formBasilea')"><i class="icon-plus"></i></a>
+										<a class="btn btn-sucess" onclick="hideElement(false, 'formBasilea')"><i class="icon-minus"></i></a>
+									</div>
+									<div class="form-actions" id="formBasilea"  style="display:none">
+										<g:formRemote name="formBasilea" on404="alert('not found!')"
+											url="[controller: 'comprobante', action: 'validateInput']"
+											onComplete="updateInAddeda('basileaIn', 'agregarBasilea')"
+											>
+											<g:render template="/basilea/form" model="" />
+											<fieldset class="buttons">
+												<g:actionSubmit name="basilea" value="Agregar"/>
+											</fieldset>
+										</g:formRemote >
+									</div>
+								</div>
 						
-							<div>
-								<div class="alert alert-info">
-									<label>
-										Informacion de Pago
-									</label>
-									<a class="btn btn-sucess" onclick="hideElement(true, 'formInfPago')"><i class="icon-plus"></i></a>
-									<a class="btn btn-sucess" onclick="hideElement(false, 'formInfPago')"><i class="icon-minus"></i></a>
-								</div>
-								<div class="form-actions" id="formInfPago" style="display:none">
-									<g:render template="/informacionPago/create" model="" />
-								</div>
-							</div>
-							
-							<div>
-								<div class="alert alert-info">
-									<label>
-										Informacion de Emisor
-									</label>
-									<a class="btn btn-sucess" onclick="hideElement(true, 'formInfEmision')"><i class="icon-plus"></i></a>
-									<a class="btn btn-sucess" onclick="hideElement(false, 'formInfEmision')"><i class="icon-minus"></i></a>
-								</div>
-								<div class="form-actions" id="formInfEmision" style="display:none">
-									<g:render template="/informacionEmision/form" model="" />
-								</div>
-							</div>
-							
-							<div>
-								<div class="alert alert-info">
-									<label>
-										Inmuebles
-									</label>
-									<a class="btn btn-sucess" onclick="hideElement(true, 'formInmuebles')"><i class="icon-plus"></i></a>
-									<a class="btn btn-sucess" onclick="hideElement(false, 'formInmuebles')"><i class="icon-minus"></i></a>
-								</div>
-								<div class="form-actions" id="formInmuebles" style="display:none">
-									<g:render template="/inmuebles/form" model="" />
-								</div>
-							</div>
-							
-							<div>
-								<div class="alert alert-info">
-									<label>
-										Basilea
-									</label>
-									<a class="btn btn-sucess" onclick="hideElement(true, 'formBasilea')"><i class="icon-plus"></i></a>
-									<a class="btn btn-sucess" onclick="hideElement(false, 'formBasilea')"><i class="icon-minus"></i></a>
-								</div>
-								<div class="form-actions" id="formBasilea" style="display:none">
-									<g:render template="/basilea/form" model="" />
-								</div>
-							</div>
-							
-						</fieldset>
-					</g:form>
 				</fieldset>
 				
 			</div>
-
+<!-- update="[success:'messageLists', failure:'messageLists']" -->
 		</div>
 	</body>
 </html>

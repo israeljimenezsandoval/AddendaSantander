@@ -59,6 +59,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${informacionEmisionInstance?.factorajes}">
+				<li class="fieldcontain">
+					<span id="factorajes-label" class="property-label"><g:message code="informacionEmision.factorajes.label" default="Factorajes" /></span>
+					
+						<g:each in="${informacionEmisionInstance.factorajes}" var="f">
+						<span class="property-value" aria-labelledby="factorajes-label"><g:link controller="informacionFactoraje" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${informacionEmisionInstance?.folioInterno}">
 				<li class="fieldcontain">
 					<span id="folioInterno-label" class="property-label"><g:message code="informacionEmision.folioInterno.label" default="Folio Interno" /></span>

@@ -5,10 +5,10 @@ import org.springframework.dao.DataIntegrityViolationException
 class ComprobanteController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']
-
-    def index() {
+	
+	def index() {
         redirect action: 'list', params: params
-    }
+	}
 
     def list() {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
@@ -32,8 +32,8 @@ class ComprobanteController {
 			break
 		}
     }
-
-    def show() {
+	
+	def show() {
         def comprobanteInstance = Comprobante.get(params.id)
         if (!comprobanteInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'comprobante.label', default: 'Comprobante'), params.id])
@@ -43,6 +43,17 @@ class ComprobanteController {
 
         [comprobanteInstance: comprobanteInstance]
     }
+	
+	def addAddenda(){
+		def comprobanteInstance = new Comprobante();
+		comprobanteInstance.informacionPago = new InformacionPago(params)
+		comprobanteInstance.informacionEmision = new InformacionEmision(params)
+		comprobanteInstance.inmuebles = new Inmuebles(params)
+		comprobanteInstance.basilea = new Basilea(params)
+	}
+	
+	def validateInput(){
+	}
 
     def edit() {
 		switch (request.method) {

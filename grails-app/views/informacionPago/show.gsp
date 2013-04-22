@@ -23,83 +23,11 @@
 			</g:if>
 			<ol class="property-list informacionPago">
 			
-				<g:if test="${informacionPagoInstance?.claveDeposito}">
-				<li class="fieldcontain">
-					<span id="claveDeposito-label" class="property-label"><g:message code="informacionPago.claveDeposito.label" default="Clave Deposito" /></span>
-					
-						<span class="property-value" aria-labelledby="claveDeposito-label"><g:fieldValue bean="${informacionPagoInstance}" field="claveDeposito"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.codigoISOMoneda}">
-				<li class="fieldcontain">
-					<span id="codigoISOMoneda-label" class="property-label"><g:message code="informacionPago.codigoISOMoneda.label" default="Codigo ISOM oneda" /></span>
-					
-						<span class="property-value" aria-labelledby="codigoISOMoneda-label"><g:fieldValue bean="${informacionPagoInstance}" field="codigoISOMoneda"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.concepto}">
-				<li class="fieldcontain">
-					<span id="concepto-label" class="property-label"><g:message code="informacionPago.concepto.label" default="Concepto" /></span>
-					
-						<span class="property-value" aria-labelledby="concepto-label"><g:fieldValue bean="${informacionPagoInstance}" field="concepto"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.cuentaContable}">
-				<li class="fieldcontain">
-					<span id="cuentaContable-label" class="property-label"><g:message code="informacionPago.cuentaContable.label" default="Cuenta Contable" /></span>
-					
-						<span class="property-value" aria-labelledby="cuentaContable-label"><g:fieldValue bean="${informacionPagoInstance}" field="cuentaContable"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="informacionPago.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${informacionPagoInstance}" field="email"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.institucionReceptora}">
-				<li class="fieldcontain">
-					<span id="institucionReceptora-label" class="property-label"><g:message code="informacionPago.institucionReceptora.label" default="Institucion Receptora" /></span>
-					
-						<span class="property-value" aria-labelledby="institucionReceptora-label"><g:fieldValue bean="${informacionPagoInstance}" field="institucionReceptora"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.nombreBeneficiario}">
-				<li class="fieldcontain">
-					<span id="nombreBeneficiario-label" class="property-label"><g:message code="informacionPago.nombreBeneficiario.label" default="Nombre Beneficiario" /></span>
-					
-						<span class="property-value" aria-labelledby="nombreBeneficiario-label"><g:fieldValue bean="${informacionPagoInstance}" field="nombreBeneficiario"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${informacionPagoInstance?.numProveedor}">
 				<li class="fieldcontain">
 					<span id="numProveedor-label" class="property-label"><g:message code="informacionPago.numProveedor.label" default="Num Proveedor" /></span>
 					
 						<span class="property-value" aria-labelledby="numProveedor-label"><g:fieldValue bean="${informacionPagoInstance}" field="numProveedor"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.numeroCuenta}">
-				<li class="fieldcontain">
-					<span id="numeroCuenta-label" class="property-label"><g:message code="informacionPago.numeroCuenta.label" default="Numero Cuenta" /></span>
-					
-						<span class="property-value" aria-labelledby="numeroCuenta-label"><g:fieldValue bean="${informacionPagoInstance}" field="numeroCuenta"/></span>
 					
 				</li>
 				</g:if>
@@ -118,6 +46,78 @@
 					<span id="posCompra-label" class="property-label"><g:message code="informacionPago.posCompra.label" default="Pos Compra" /></span>
 					
 						<span class="property-value" aria-labelledby="posCompra-label"><g:fieldValue bean="${informacionPagoInstance}" field="posCompra"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.nombreBeneficiario}">
+				<li class="fieldcontain">
+					<span id="nombreBeneficiario-label" class="property-label"><g:message code="informacionPago.nombreBeneficiario.label" default="Nombre Beneficiario" /></span>
+					
+						<span class="property-value" aria-labelledby="nombreBeneficiario-label"><g:fieldValue bean="${informacionPagoInstance}" field="nombreBeneficiario"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.institucionReceptora}">
+				<li class="fieldcontain">
+					<span id="institucionReceptora-label" class="property-label"><g:message code="informacionPago.institucionReceptora.label" default="Institucion Receptora" /></span>
+					
+						<span class="property-value" aria-labelledby="institucionReceptora-label"><g:fieldValue bean="${informacionPagoInstance}" field="institucionReceptora"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.numeroCuenta}">
+				<li class="fieldcontain">
+					<span id="numeroCuenta-label" class="property-label"><g:message code="informacionPago.numeroCuenta.label" default="Numero Cuenta" /></span>
+					
+						<span class="property-value" aria-labelledby="numeroCuenta-label"><g:fieldValue bean="${informacionPagoInstance}" field="numeroCuenta"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.cuentaContable}">
+				<li class="fieldcontain">
+					<span id="cuentaContable-label" class="property-label"><g:message code="informacionPago.cuentaContable.label" default="Cuenta Contable" /></span>
+					
+						<span class="property-value" aria-labelledby="cuentaContable-label"><g:fieldValue bean="${informacionPagoInstance}" field="cuentaContable"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.claveDeposito}">
+				<li class="fieldcontain">
+					<span id="claveDeposito-label" class="property-label"><g:message code="informacionPago.claveDeposito.label" default="Clave Deposito" /></span>
+					
+						<span class="property-value" aria-labelledby="claveDeposito-label"><g:fieldValue bean="${informacionPagoInstance}" field="claveDeposito"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="informacionPago.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${informacionPagoInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.concepto}">
+				<li class="fieldcontain">
+					<span id="concepto-label" class="property-label"><g:message code="informacionPago.concepto.label" default="Concepto" /></span>
+					
+						<span class="property-value" aria-labelledby="concepto-label"><g:fieldValue bean="${informacionPagoInstance}" field="concepto"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${informacionPagoInstance?.codigoISOMoneda}">
+				<li class="fieldcontain">
+					<span id="codigoISOMoneda-label" class="property-label"><g:message code="informacionPago.codigoISOMoneda.label" default="Codigo ISOM oneda" /></span>
+					
+						<span class="property-value" aria-labelledby="codigoISOMoneda-label"><g:fieldValue bean="${informacionPagoInstance}" field="codigoISOMoneda"/></span>
 					
 				</li>
 				</g:if>

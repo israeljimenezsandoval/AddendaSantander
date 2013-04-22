@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="aforo" title="${message(code: 'informacionFactoraje.aforo.label', default: 'Aforo')}" />
-					
 						<g:sortableColumn property="deudorProveedor" title="${message(code: 'informacionFactoraje.deudorProveedor.label', default: 'Deudor Proveedor')}" />
 					
-						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'informacionFactoraje.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
-					
-						<g:sortableColumn property="importeDescuento" title="${message(code: 'informacionFactoraje.importeDescuento.label', default: 'Importe Descuento')}" />
+						<g:sortableColumn property="tipoDocumento" title="${message(code: 'informacionFactoraje.tipoDocumento.label', default: 'Tipo Documento')}" />
 					
 						<g:sortableColumn property="numeroDocumento" title="${message(code: 'informacionFactoraje.numeroDocumento.label', default: 'Numero Documento')}" />
 					
 						<g:sortableColumn property="plazo" title="${message(code: 'informacionFactoraje.plazo.label', default: 'Plazo')}" />
+					
+						<g:sortableColumn property="valorNominal" title="${message(code: 'informacionFactoraje.valorNominal.label', default: 'Valor Nominal')}" />
+					
+						<g:sortableColumn property="aforo" title="${message(code: 'informacionFactoraje.aforo.label', default: 'Aforo')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${informacionFactorajeInstanceList}" status="i" var="informacionFactorajeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${informacionFactorajeInstance.id}">${fieldValue(bean: informacionFactorajeInstance, field: "aforo")}</g:link></td>
+						<td><g:link action="show" id="${informacionFactorajeInstance.id}">${fieldValue(bean: informacionFactorajeInstance, field: "deudorProveedor")}</g:link></td>
 					
-						<td>${fieldValue(bean: informacionFactorajeInstance, field: "deudorProveedor")}</td>
-					
-						<td><g:formatDate date="${informacionFactorajeInstance.fechaVencimiento}" /></td>
-					
-						<td>${fieldValue(bean: informacionFactorajeInstance, field: "importeDescuento")}</td>
+						<td>${fieldValue(bean: informacionFactorajeInstance, field: "tipoDocumento")}</td>
 					
 						<td>${fieldValue(bean: informacionFactorajeInstance, field: "numeroDocumento")}</td>
 					
 						<td>${fieldValue(bean: informacionFactorajeInstance, field: "plazo")}</td>
+					
+						<td>${fieldValue(bean: informacionFactorajeInstance, field: "valorNominal")}</td>
+					
+						<td>${fieldValue(bean: informacionFactorajeInstance, field: "aforo")}</td>
 					
 					</tr>
 				</g:each>

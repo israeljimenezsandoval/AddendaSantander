@@ -24,17 +24,17 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="claveDeposito" title="${message(code: 'informacionPago.claveDeposito.label', default: 'Clave Deposito')}" />
+						<g:sortableColumn property="numProveedor" title="${message(code: 'informacionPago.numProveedor.label', default: 'Num Proveedor')}" />
 					
-						<g:sortableColumn property="codigoISOMoneda" title="${message(code: 'informacionPago.codigoISOMoneda.label', default: 'Codigo ISOM oneda')}" />
+						<g:sortableColumn property="ordenCompra" title="${message(code: 'informacionPago.ordenCompra.label', default: 'Orden Compra')}" />
 					
-						<g:sortableColumn property="concepto" title="${message(code: 'informacionPago.concepto.label', default: 'Concepto')}" />
+						<g:sortableColumn property="posCompra" title="${message(code: 'informacionPago.posCompra.label', default: 'Pos Compra')}" />
 					
-						<g:sortableColumn property="cuentaContable" title="${message(code: 'informacionPago.cuentaContable.label', default: 'Cuenta Contable')}" />
-					
-						<g:sortableColumn property="email" title="${message(code: 'informacionPago.email.label', default: 'Email')}" />
+						<g:sortableColumn property="nombreBeneficiario" title="${message(code: 'informacionPago.nombreBeneficiario.label', default: 'Nombre Beneficiario')}" />
 					
 						<g:sortableColumn property="institucionReceptora" title="${message(code: 'informacionPago.institucionReceptora.label', default: 'Institucion Receptora')}" />
+					
+						<g:sortableColumn property="numeroCuenta" title="${message(code: 'informacionPago.numeroCuenta.label', default: 'Numero Cuenta')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${informacionPagoInstanceList}" status="i" var="informacionPagoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${informacionPagoInstance.id}">${fieldValue(bean: informacionPagoInstance, field: "claveDeposito")}</g:link></td>
+						<td><g:link action="show" id="${informacionPagoInstance.id}">${fieldValue(bean: informacionPagoInstance, field: "numProveedor")}</g:link></td>
 					
-						<td>${fieldValue(bean: informacionPagoInstance, field: "codigoISOMoneda")}</td>
+						<td>${fieldValue(bean: informacionPagoInstance, field: "ordenCompra")}</td>
 					
-						<td>${fieldValue(bean: informacionPagoInstance, field: "concepto")}</td>
+						<td>${fieldValue(bean: informacionPagoInstance, field: "posCompra")}</td>
 					
-						<td>${fieldValue(bean: informacionPagoInstance, field: "cuentaContable")}</td>
-					
-						<td>${fieldValue(bean: informacionPagoInstance, field: "email")}</td>
+						<td>${fieldValue(bean: informacionPagoInstance, field: "nombreBeneficiario")}</td>
 					
 						<td>${fieldValue(bean: informacionPagoInstance, field: "institucionReceptora")}</td>
+					
+						<td>${fieldValue(bean: informacionPagoInstance, field: "numeroCuenta")}</td>
 					
 					</tr>
 				</g:each>

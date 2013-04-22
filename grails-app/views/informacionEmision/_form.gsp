@@ -34,6 +34,23 @@
 	<g:textField name="contrato" value="${informacionEmisionInstance?.contrato}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: informacionEmisionInstance, field: 'factorajes', 'error')} ">
+	<label for="factorajes">
+		<g:message code="informacionEmision.factorajes.label" default="Factorajes" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${informacionEmisionInstance?.factorajes?}" var="f">
+    <li><g:link controller="informacionFactoraje" action="show" id="${f.id}">${f?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="informacionFactoraje" action="create" params="['informacionEmision.id': informacionEmisionInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'informacionFactoraje.label', default: 'InformacionFactoraje')])}</g:link>
+</li>
+</ul>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: informacionEmisionInstance, field: 'folioInterno', 'error')} ">
 	<label for="folioInterno">
 		<g:message code="informacionEmision.folioInterno.label" default="Folio Interno" />
