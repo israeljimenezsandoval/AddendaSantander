@@ -47,5 +47,9 @@ grails.project.dependency.resolution = {
         //runtime ":yui-minify-resources:0.1.4"
 
         build ":tomcat:$grailsVersion"
+
+        runtime ':twitter-bootstrap:2.0.0.16'
+        runtime ':fields:1.0.1'
+
     }
 }
