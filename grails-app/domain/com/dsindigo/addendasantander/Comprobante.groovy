@@ -1,13 +1,18 @@
 package com.dsindigo.addendasantander
 
+import java.util.List;
+
 class Comprobante {
 	
 	static constraints = {
-		informacionPago(nullable:false)
-    }
-
+	}
+	static mapping = {
+		informacionPago cascade: "all-delete-orphan"
+	}
+	static hasMany = [informacionPago: InformacionPago]
+	
+	List informacionPago
     String name
-	InformacionPago informacionPago
 	InformacionEmision informacionEmision
 	Inmuebles inmuebles
 	Basilea basilea

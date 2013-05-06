@@ -3,8 +3,9 @@ package com.dsindigo.addendasantander
 class Inmuebles {
 
     static constraints = {
-		numContrato(nullable:false, blank:false)
-    }
+	}
+	
+	static belongsTo = [ comprobante : Comprobante ]
 	
 	Date fechaVencimiento
 	String numContrato
