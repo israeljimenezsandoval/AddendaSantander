@@ -14,10 +14,11 @@ class InformacionEmision {
 	InformacionFactoraje tFactoraje
 	
 	static hasMany = [factorajes:InformacionFactoraje]
+	static belongsTo = [ comprobante : Comprobante ]
 		
-	List factorajes = new ArrayList()
+	List factorajes
 	
 	static mapping = {
-		factorajes cascade:"all,delete-orphan"
+		factorajes cascade:"all-delete-orphan"
 	}
 }
