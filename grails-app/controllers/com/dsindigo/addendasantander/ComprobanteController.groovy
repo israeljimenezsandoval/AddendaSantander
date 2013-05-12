@@ -1,6 +1,7 @@
 package com.dsindigo.addendasantander
 
 import org.springframework.dao.DataIntegrityViolationException
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 
 class ComprobanteController {
@@ -17,10 +18,24 @@ class ComprobanteController {
     }
 
     def create() {
-		params.informacionPago = [new InformacionPago()]
-        [comprobanteInstance: new Comprobante(params)]
+		def comprobanteInstance = new Comprobante(params);
+		if(request instanceof MultipartHttpServletRequest){
+			def file = request.getFile("fileComprobante")
+			if(file && !file.empty) {
+				def fileString = new InputStreamReader(file.getInputStream())
+				comprobanteInstance.file = fileString.getText()
+			}
+			[comprobanteInstance: comprobanteInstance]
+		}else{
+			flash.message = "Seleccione comprobante"
+			redirect(action: "uploadComprobante")
+		}
     }
-
+	
+	def uploadComprobante(){
+		render(view: "uploadComprobante")
+	}
+	
     def save() {
         def comprobanteInstance = new Comprobante(params)
         if (!comprobanteInstance.save(flush: true)) {

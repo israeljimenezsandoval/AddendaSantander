@@ -13,6 +13,7 @@ class Comprobante {
 	
 	List informacionPago
     String name
+	String file 
 	InformacionEmision informacionEmision
 	Inmuebles inmuebles
 	Basilea basilea

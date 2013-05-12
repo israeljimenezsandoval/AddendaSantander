@@ -1,6 +1,5 @@
 <%@ page import="com.dsindigo.addendasantander.Comprobante"%>
 
-
 <div id="agregarInfPago">
 	<div class="alert alert-info">
 		<label>Informacion de Pago</label> <a class="btn btn-sucess"

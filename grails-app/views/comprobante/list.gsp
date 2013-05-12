@@ -20,7 +20,7 @@
 							<i class="icon-list icon-white"></i>
 							<g:message code="default.list.label" args="[entityName]" />
 						</g:link></li>
-					<li><g:link class="create" action="create">
+					<li><g:link class="create" action="uploadComprobante">
 							<i class="icon-plus"></i>
 							<g:message code="default.create.label" args="[entityName]" />
 						</g:link></li>
