@@ -5,7 +5,9 @@ class Basilea {
     static constraints = {
     }
 	
+	static belongsTo = [ comprobante:Comprobante ]
+	
 	String numContrato
 	String origenGasto
-	String TipoGasto
+	String tipoGasto
 }

@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list informacionPago">
 			
+				<g:if test="${informacionPagoInstance?.email}">
+				<li class="fieldcontain">
+					<span id="email-label" class="property-label"><g:message code="informacionPago.email.label" default="Email" /></span>
+					
+						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${informacionPagoInstance}" field="email"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${informacionPagoInstance?.claveDeposito}">
 				<li class="fieldcontain">
 					<span id="claveDeposito-label" class="property-label"><g:message code="informacionPago.claveDeposito.label" default="Clave Deposito" /></span>
@@ -55,15 +64,6 @@
 					<span id="cuentaContable-label" class="property-label"><g:message code="informacionPago.cuentaContable.label" default="Cuenta Contable" /></span>
 					
 						<span class="property-value" aria-labelledby="cuentaContable-label"><g:fieldValue bean="${informacionPagoInstance}" field="cuentaContable"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${informacionPagoInstance?.email}">
-				<li class="fieldcontain">
-					<span id="email-label" class="property-label"><g:message code="informacionPago.email.label" default="Email" /></span>
-					
-						<span class="property-value" aria-labelledby="email-label"><g:fieldValue bean="${informacionPagoInstance}" field="email"/></span>
 					
 				</li>
 				</g:if>

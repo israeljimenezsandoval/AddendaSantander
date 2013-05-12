@@ -3,7 +3,10 @@ package com.dsindigo.addendasantander
 class InformacionPago {
 
     static constraints = {
+		email(nullable:false, blank:false, email:true)
     }
+	
+	static belongsTo = [comprobante:Comprobante]
 	
 	int numProveedor
 	String ordenCompra

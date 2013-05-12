@@ -24,6 +24,8 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="email" title="${message(code: 'informacionPago.email.label', default: 'Email')}" />
+					
 						<g:sortableColumn property="claveDeposito" title="${message(code: 'informacionPago.claveDeposito.label', default: 'Clave Deposito')}" />
 					
 						<g:sortableColumn property="codigoISOMoneda" title="${message(code: 'informacionPago.codigoISOMoneda.label', default: 'Codigo ISOM oneda')}" />
@@ -31,8 +33,6 @@
 						<g:sortableColumn property="concepto" title="${message(code: 'informacionPago.concepto.label', default: 'Concepto')}" />
 					
 						<g:sortableColumn property="cuentaContable" title="${message(code: 'informacionPago.cuentaContable.label', default: 'Cuenta Contable')}" />
-					
-						<g:sortableColumn property="email" title="${message(code: 'informacionPago.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="institucionReceptora" title="${message(code: 'informacionPago.institucionReceptora.label', default: 'Institucion Receptora')}" />
 					
@@ -42,15 +42,15 @@
 				<g:each in="${informacionPagoInstanceList}" status="i" var="informacionPagoInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${informacionPagoInstance.id}">${fieldValue(bean: informacionPagoInstance, field: "claveDeposito")}</g:link></td>
+						<td><g:link action="show" id="${informacionPagoInstance.id}">${fieldValue(bean: informacionPagoInstance, field: "email")}</g:link></td>
+					
+						<td>${fieldValue(bean: informacionPagoInstance, field: "claveDeposito")}</td>
 					
 						<td>${fieldValue(bean: informacionPagoInstance, field: "codigoISOMoneda")}</td>
 					
 						<td>${fieldValue(bean: informacionPagoInstance, field: "concepto")}</td>
 					
 						<td>${fieldValue(bean: informacionPagoInstance, field: "cuentaContable")}</td>
-					
-						<td>${fieldValue(bean: informacionPagoInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: informacionPagoInstance, field: "institucionReceptora")}</td>
 					

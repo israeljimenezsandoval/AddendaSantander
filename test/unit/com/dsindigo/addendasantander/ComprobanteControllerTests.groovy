@@ -11,9 +11,9 @@ class ComprobanteControllerTests {
 
 
     def populateValidParams(params) {
-        assert params != null
-        // TODO: Populate valid properties like...
-        //params["name"] = 'someValidName'
+      assert params != null
+      // TODO: Populate valid properties like...
+      //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -30,9 +30,9 @@ class ComprobanteControllerTests {
     }
 
     void testCreate() {
-        def model = controller.create()
+       def model = controller.create()
 
-        assert model.comprobanteInstance != null
+       assert model.comprobanteInstance != null
     }
 
     void testSave() {

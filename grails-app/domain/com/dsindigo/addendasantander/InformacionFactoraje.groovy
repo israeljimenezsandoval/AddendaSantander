@@ -1,9 +1,11 @@
 package com.dsindigo.addendasantander
 
-class InformacionFactoraje {
+class InformacionFactoraje implements Serializable {
 
     static constraints = {
     }
+	
+	static belongsTo = [ informacionEmision:InformacionEmision ]
 	
 	String deudorProveedor
 	String tipoDocumento

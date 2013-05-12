@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list inmuebles">
 			
-				<g:if test="${inmueblesInstance?.fechaVencimiento}">
-				<li class="fieldcontain">
-					<span id="fechaVencimiento-label" class="property-label"><g:message code="inmuebles.fechaVencimiento.label" default="Fecha Vencimiento" /></span>
-					
-						<span class="property-value" aria-labelledby="fechaVencimiento-label"><g:formatDate date="${inmueblesInstance?.fechaVencimiento}" /></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${inmueblesInstance?.numContrato}">
 				<li class="fieldcontain">
 					<span id="numContrato-label" class="property-label"><g:message code="inmuebles.numContrato.label" default="Num Contrato" /></span>
 					
 						<span class="property-value" aria-labelledby="numContrato-label"><g:fieldValue bean="${inmueblesInstance}" field="numContrato"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${inmueblesInstance?.fechaVencimiento}">
+				<li class="fieldcontain">
+					<span id="fechaVencimiento-label" class="property-label"><g:message code="inmuebles.fechaVencimiento.label" default="Fecha Vencimiento" /></span>
+					
+						<span class="property-value" aria-labelledby="fechaVencimiento-label"><g:formatDate date="${inmueblesInstance?.fechaVencimiento}" /></span>
 					
 				</li>
 				</g:if>

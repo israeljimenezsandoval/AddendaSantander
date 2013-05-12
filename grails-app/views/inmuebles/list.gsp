@@ -24,9 +24,9 @@
 				<thead>
 					<tr>
 					
-						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'inmuebles.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
-					
 						<g:sortableColumn property="numContrato" title="${message(code: 'inmuebles.numContrato.label', default: 'Num Contrato')}" />
+					
+						<g:sortableColumn property="fechaVencimiento" title="${message(code: 'inmuebles.fechaVencimiento.label', default: 'Fecha Vencimiento')}" />
 					
 					</tr>
 				</thead>
@@ -34,9 +34,9 @@
 				<g:each in="${inmueblesInstanceList}" status="i" var="inmueblesInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${inmueblesInstance.id}">${fieldValue(bean: inmueblesInstance, field: "fechaVencimiento")}</g:link></td>
+						<td><g:link action="show" id="${inmueblesInstance.id}">${fieldValue(bean: inmueblesInstance, field: "numContrato")}</g:link></td>
 					
-						<td>${fieldValue(bean: inmueblesInstance, field: "numContrato")}</td>
+						<td><g:formatDate date="${inmueblesInstance.fechaVencimiento}" /></td>
 					
 					</tr>
 				</g:each>
